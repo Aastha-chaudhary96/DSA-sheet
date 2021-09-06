@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+void sort ( int a[], int N ){
+    int l=0,m=0,h=N-1;
+    while(m<=h){
+        switch(a[m]){
+            case 0: swap(a[l++],a[m++]);
+                    break;
+            case 1: m++; break;
+            case 2: swap(a[m],a[h--]);break;
+        }
+    }
+}
+
+int main()
+{
+    int N;
+    printf("Enter the size of the array : ");
+    scanf("%d",&N);
+    int a[N];
+    printf("Enter %d elements : ",N);
+    for(int i=0;i<N;i++){
+        scanf("%d",&a[i]);
+    }
+    
+    sort(a, N);
+    for(int i=0;i<N;i++){
+        printf("%d ",a[i]);
+    }
+
+    return 0;
+}
